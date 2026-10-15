@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bitcount+Ink:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  font-family: "Roboto Mono", monospace;
+  margin: 0;
+}
+h1 {
+    color : white;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+h2,h3{
+     color :#183b66;
+}
+
+nav {
+    background-color:#183b66;
+}
+
+.nav-links a{
+    color : white;
+    text-decoration:none;
+}
+
+.nav-links {
+    display:  flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-blog {
+    display: flex;
+    border: 1px solid #e0e7f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(23, 59, 103, 0.06);
+    width: 80vw;
+    margin-top: 25px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.welcome-blog p {
+      padding: 40px;
+      font-size: 25px;
+}
+
+.welcome-blog img {
+    width: 350px;
+    height: 350px;
+        background-color: #183b66;
+
+}
+
+.welcome-blog img figure figcaption{
+    text-align: center;
+    background-color: #183b66;
+}
