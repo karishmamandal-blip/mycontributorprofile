@@ -4,17 +4,21 @@ body {
   font-family: "Roboto Mono", monospace;
   margin: 0;
 }
+
 h1 {
     color : white;
     margin: 0;
     margin-bottom: 10px;
     text-align: center;
 }
+
 h2,h3{
      color :#183b66;
 }
 
 nav {
+    position: sticky;
+    top: 0;
     background-color:#183b66;
 }
 
@@ -24,17 +28,16 @@ nav {
 }
 
 .nav-links {
-    display:  flex;
+    display:flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 50px;
+    height: 3.5rem;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
 .welcome-blog {
@@ -50,17 +53,115 @@ main {
 
 .welcome-blog p {
       padding: 40px;
-      font-size: 25px;
 }
 
 .welcome-blog img {
-    width: 350px;
-    height: 350px;
-        background-color: #183b66;
-
+    width: 400px;
+    height: 400px;
 }
 
-.welcome-blog img figure figcaption{
+.about-me ,.contact-me{
+    border: 1px solid #e0e7f0;
+    border-radius: 12px;
+    margin-top: 25px;
+    box-shadow: 0 4px 14px rgba(23, 59, 103, 0.06);
+    padding: 10px;
+    width: 80vw;
+}
+
+.contact-me form{
+   display: grid;
+   width: 400px;
+}
+
+figcaption{
+    color: #183b66;
     text-align: center;
+    font-style: italic;
+}
+
+
+/* Page basics */
+html { scroll-behavior: smooth; }
+body { color: #1f2a3a; background-color: #f6f9fd; line-height: 1.6; }
+nav { z-index: 10; padding-top: 12px; }
+h1 { letter-spacing: 1px; }
+
+/* Nav links: hover effect */
+.nav-links a { padding: 6px 10px; border-radius: 6px; transition: background-color 0.2s; }
+.nav-links a:hover { background-color: #2a5a96; }
+
+/* Anchor jumps shouldn't hide under the sticky nav */
+h2[id] { scroll-margin-top: 110px; }
+
+/* Welcome card */
+.welcome-blog { background-color: white; }
+.welcome-blog img { border-radius: 12px; object-fit: cover; }
+
+/* About me: hobbies and skills side by side */
+.about-me { background-color: white; box-sizing: border-box; }
+.about-me .hobbies, .about-me .skills { display: inline-block; vertical-align: top; width: 45%; padding: 0 20px; box-sizing: border-box; }
+
+/* Projects and glossary: same card look as other sections */
+.project, .glossary {
+    background-color: white;
+    border: 1px solid #e0e7f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(23, 59, 103, 0.06);
+    padding: 10px 20px;
+    margin-top: 25px;
+    width: 80vw;
+    box-sizing: border-box;
+}
+dt { font-weight: bold; color: #183b66; margin-top: 12px; text-transform: capitalize; }
+dd { margin-left: 24px; }
+
+/* Contact me */
+.contact-me { background-color: white; box-sizing: border-box; }
+.contact-me > a {
+    display: inline-block;
+    margin: 6px 12px 12px 0;
+    padding: 8px 16px;
+    color: #183b66;
+    border: 1px solid #183b66;
+    border-radius: 8px;
+    text-decoration: none;
+}
+.contact-me > a:hover { background-color: #183b66; color: white; }
+.contact-me label { margin-top: 12px; margin-bottom: 4px; font-weight: bold; color: #183b66; }
+.contact-me input {
+    padding: 8px 10px;
+    border: 1px solid #c5d3e6;
+    border-radius: 6px;
+    font-family: inherit;
+}
+.contact-me input:focus { outline: none; border-color: #183b66; box-shadow: 0 0 0 3px rgba(24, 59, 102, 0.15); }
+#submit-button {
+    margin-top: 18px;
+    padding: 10px;
     background-color: #183b66;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+}
+#submit-button:hover { background-color: #2a5a96; }
+
+/* Contributions table */
+table { border-collapse: collapse; width: 60vw; margin-bottom: 40px; background-color: white; box-shadow: 0 4px 14px rgba(23, 59, 103, 0.06); }
+th { background-color: #183b66; color: white; padding: 10px; text-align: left; }
+td { padding: 10px; border: 1px solid #e0e7f0; }
+tbody tr:nth-child(even) { background-color: #f1f5fb; }
+tbody tr:hover { background-color: #dfe8f5; }
+
+/* Small screens */
+@media (max-width: 700px) {
+    .nav-links { flex-wrap: wrap; height: auto; padding: 8px 0; }
+    .welcome-blog { flex-direction: column; }
+    .welcome-blog img { width: 100%; height: auto; }
+    .about-me .hobbies, .about-me .skills { width: 100%; }
+    .contact-me form { width: 100%; }
+    table { width: 90vw; }
 }
